@@ -5,6 +5,8 @@ namespace CarRepairShop
         public Form1()
         {
             InitializeComponent();
+            DatabaseConnection databaseConnection = DatabaseConnection.GetDatebaseConnectionInstance();
+            databaseConnection.OpenConnection();
         }
     }
 }
