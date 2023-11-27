@@ -2,20 +2,24 @@
 using Microsoft.Data.SqlClient;
 #endregion
 
-    /// <summary></summary>
-    public class DatabaseConnection
-    {
+/// <summary></summary>
+public class DatabaseConnection
+{
     //-------------------------
     //Constants:
     //-------------------------
-    private const string CREDITIONALS = @"Data Source=DESKTOP-CREALSR\AAYASH;Initial Catalog=CarRepairShop;
-User ID=sa;Password=Nikoleta8901231871; TrustServerCertificate=True;";
+    private const string CREDITIONALS =
+            @"Data Source=DESKTOP-CREALSR\AAYASH;
+            Initial Catalog=CarRepairShop;
+            User ID=sa;
+            Password=Nikoleta8901231871; 
+            TrustServerCertificate=True;";
 
     //-------------------------
     //Members:
     //-------------------------
 
-   private SqlConnection _connection;
+    private SqlConnection _connection;
 
     private static DatabaseConnection? _datebaseConnectionInsatnce = null;
 
@@ -47,9 +51,9 @@ User ID=sa;Password=Nikoleta8901231871; TrustServerCertificate=True;";
     //-------------------------
     //Methods:
     //-------------------------
-    public static DatabaseConnection GetDatebaseConnectionInstance() 
+    public static DatabaseConnection GetDatebaseConnectionInstance()
     {
-        if(_datebaseConnectionInsatnce == null)
+        if (_datebaseConnectionInsatnce == null)
         {
             _datebaseConnectionInsatnce = new DatabaseConnection();
         }
