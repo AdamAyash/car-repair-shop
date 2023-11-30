@@ -36,6 +36,7 @@
             insertToolStripMenuItem = new ToolStripMenuItem();
             updateToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
+            databaseConnectionBindingSource1 = new BindingSource(components);
             menuStrip1 = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
             toolStripMenuItem5 = new ToolStripMenuItem();
@@ -47,6 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -101,6 +103,10 @@
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             deleteToolStripMenuItem.Size = new Size(127, 24);
             deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // databaseConnectionBindingSource1
+            // 
+            databaseConnectionBindingSource1.DataSource = typeof(DatabaseConnection);
             // 
             // menuStrip1
             // 
@@ -164,6 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -186,5 +193,6 @@
         private ToolStripMenuItem insertToolStripMenuItem;
         private ToolStripMenuItem updateToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
+        private BindingSource databaseConnectionBindingSource1;
     }
 }

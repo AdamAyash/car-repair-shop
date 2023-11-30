@@ -9,10 +9,9 @@ public class DatabaseConnection
     //Constants:
     //-------------------------
     private const string CREDITIONALS =
-            @"Data Source=DESKTOP-CREALSR\AAYASH;
+            @"Data Source=DESKTOP-LLGLM3I\AAYASH;
             Initial Catalog=CarRepairShop;
-            User ID=sa;
-            Password=Nikoleta8901231871; 
+           Integrated Security=True;
             TrustServerCertificate=True;";
 
     //-------------------------
