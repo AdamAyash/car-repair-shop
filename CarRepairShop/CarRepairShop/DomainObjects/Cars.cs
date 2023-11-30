@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace CarRepairShop.DomainObjects
     {
         public int ID { get; set; }
 
-        public int RegistrationNumber { get; set; }
+        public string RegistrationNumber { get; set; }
 
         public int BrandID { get; set; }
 
@@ -23,5 +24,16 @@ namespace CarRepairShop.DomainObjects
         public int NumberOfSeats { get; set; }
 
         public int RepairPrice { get; set; }
+
+        public Cars()
+        {
+        }
+
+        public Cars(DataRow source)
+        {
+            ID = source.Field<int>("ID");
+            RegistrationNumber = source.Field<string>("REGISTRATION_NUMBER");
+        }
     }
+  
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            dataGridView1 = new DataGridView();
             databaseConnectionBindingSource = new BindingSource(components);
             dataGridView2 = new DataGridView();
             contextMenuStrip1 = new ContextMenuStrip(components);
@@ -49,22 +48,11 @@
             LoadDataCars = new ToolStripMenuItem();
             LoadDataClients = new ToolStripMenuItem();
             LoadDataRepairs = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(55, 31);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(660, 278);
-            dataGridView1.TabIndex = 0;
             // 
             // databaseConnectionBindingSource
             // 
@@ -218,8 +206,11 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
+<<<<<<< Updated upstream
             SizeChanged += Form1_SizeChanged;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+=======
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             contextMenuStrip1.ResumeLayout(false);
@@ -231,7 +222,6 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
         private BindingSource databaseConnectionBindingSource;
         private DataGridView dataGridView2;
         private MenuStrip menuStrip1;

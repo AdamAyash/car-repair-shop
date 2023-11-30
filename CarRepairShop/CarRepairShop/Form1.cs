@@ -1,7 +1,9 @@
 using CarRepairShop.DomainObjects;
 using Microsoft.Data.SqlClient;
+using System;
 using System.Data;
 using System.Data.Common;
+using System.Windows.Forms;
 
 namespace CarRepairShop
 {
@@ -15,16 +17,16 @@ namespace CarRepairShop
             databaseConnection.OpenConnection();
 
 
-            SqlCommand command = new SqlCommand("SELECT * FROM CARS", databaseConnection.Connection);
-            SqlDataReader sqlReder = command.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(sqlReder);
-            dataGridView2.DataSource = dt;
+            
 
             Cars car = new Cars();
             car.NumberOfSeats = 0;
             car.YearOfProdyction = DateTime.Now;
+<<<<<<< Updated upstream
             car.RegistrationNumber = 2;
+=======
+            car.RegistrationNumber = "123";
+>>>>>>> Stashed changes
             car.BrandID = 1;
             car.ModelID = 1;
             car.ColordID = 0;
@@ -98,12 +100,15 @@ namespace CarRepairShop
         //Krai na spravkite
 
 
-
-
         //Load Data
         private void LoadDataCars_Click(object sender, EventArgs e)
         {
-
+            SqlCommand command = new SqlCommand("SELECT * FROM CARS", databaseConnection.Connection);
+            SqlDataReader sqlReder = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(sqlReder);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Refresh();
         }
 
         private void LoadDataClients_Click(object sender, EventArgs e)
@@ -136,6 +141,9 @@ namespace CarRepairShop
 
         private void RMBPreview_Click(object sender, EventArgs e)
         {
+            DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+            Cars car = new Cars(row);
+            Console.WriteLine(car.ID);
 
         }
 
