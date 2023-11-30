@@ -22,6 +22,7 @@ namespace CarRepairShop
             Cars car = new Cars();
             car.NumberOfSeats = 0;
             car.YearOfProdyction = DateTime.Now;
+            car.RegistrationNumber = "2";
             car.RegistrationNumber = "123";
             car.BrandID = 1;
             car.ModelID = 1;
