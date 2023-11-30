@@ -13,11 +13,19 @@ namespace CarRepairShop
 
 
             SqlCommand command = new SqlCommand("SELECT * FROM MODELS", databaseConnection.Connection);
-            SqlDataReader  sqlReder = command.ExecuteReader();
+            SqlDataReader sqlReder = command.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(sqlReder);
             dataGridView1.DataSource = dt;
 
+        }
+
+        private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(dataGridView2, e.Location);
+            }
         }
     }
 }
