@@ -53,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,6 +110,13 @@
             RMBDelete.Size = new Size(129, 24);
             RMBDelete.Text = "Delete";
             RMBDelete.Click += RMBDelete_Click;
+            // 
+            // RMBPreview
+            // 
+            RMBPreview.Name = "RMBPreview";
+            RMBPreview.Size = new Size(129, 24);
+            RMBPreview.Text = "Preview";
+            RMBPreview.Click += RMBPreview_Click;
             // 
             // menuStrip1
             // 
@@ -214,7 +220,6 @@
             ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -233,8 +238,15 @@
         private ToolStripMenuItem ShowUnpaidCars;
         private ToolStripMenuItem toolStripMenuItem2;
         private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem insertToolStripMenuItem;
-        private ToolStripMenuItem updateToolStripMenuItem;
-        private ToolStripMenuItem deleteToolStripMenuItem;
+        private ToolStripMenuItem RMBInsert;
+        private ToolStripMenuItem RMBUpdate;
+        private ToolStripMenuItem RMBDelete;
+        private ToolStripMenuItem LoadDataCars;
+        private ToolStripMenuItem LoadDataClients;
+        private ToolStripMenuItem LoadDataRepairs;
+        private ToolStripMenuItem ShowPaidCars;
+        private ToolStripMenuItem ShowTop3MostRepairedBrands;
+        private ToolStripMenuItem ShowClientWithMostPays;
+        private ToolStripMenuItem RMBPreview;
     }
 }
