@@ -2003,19 +2003,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Adam Ayash\\.nuget\\packages\\": {}
+    "C:\\Users\\vaset\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Adam Ayash\\Documents\\GitHub\\car-repair-shop\\CarRepairShop\\CarRepairShop\\CarRepairShop.csproj",
+      "projectUniqueName": "C:\\Users\\vaset\\Desktop\\car-repair-shop\\CarRepairShop\\CarRepairShop\\CarRepairShop.csproj",
       "projectName": "CarRepairShop",
-      "projectPath": "C:\\Users\\Adam Ayash\\Documents\\GitHub\\car-repair-shop\\CarRepairShop\\CarRepairShop\\CarRepairShop.csproj",
-      "packagesPath": "C:\\Users\\Adam Ayash\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Adam Ayash\\Documents\\GitHub\\car-repair-shop\\CarRepairShop\\CarRepairShop\\obj\\",
+      "projectPath": "C:\\Users\\vaset\\Desktop\\car-repair-shop\\CarRepairShop\\CarRepairShop\\CarRepairShop.csproj",
+      "packagesPath": "C:\\Users\\vaset\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vaset\\Desktop\\car-repair-shop\\CarRepairShop\\CarRepairShop\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Adam Ayash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vaset\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

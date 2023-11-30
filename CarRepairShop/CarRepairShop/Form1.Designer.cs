@@ -72,14 +72,16 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.ContextMenuStrip = contextMenuStrip1;
-            dataGridView2.Location = new Point(87, 105);
+            dataGridView2.Dock = DockStyle.Fill;
+            dataGridView2.Location = new Point(0, 30);
             dataGridView2.Margin = new Padding(3, 4, 3, 4);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(631, 425);
+            dataGridView2.Size = new Size(832, 673);
             dataGridView2.TabIndex = 0;
             dataGridView2.CellMouseClick += dataGridView2_CellMouseClick;
             // 
@@ -125,7 +127,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(806, 30);
+            menuStrip1.Size = new Size(832, 30);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -210,12 +212,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(806, 708);
+            ClientSize = new Size(832, 703);
             Controls.Add(dataGridView2);
             Controls.Add(menuStrip1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
+            SizeChanged += Form1_SizeChanged;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();

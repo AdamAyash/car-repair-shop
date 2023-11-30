@@ -24,7 +24,7 @@ namespace CarRepairShop
             Cars car = new Cars();
             car.NumberOfSeats = 0;
             car.YearOfProdyction = DateTime.Now;
-            car.RegistrationNumber =2;
+            car.RegistrationNumber = 2;
             car.BrandID = 1;
             car.ModelID = 1;
             car.ColordID = 0;
@@ -138,6 +138,14 @@ namespace CarRepairShop
         {
 
         }
+
         //Krai na Context Menu (RMB)
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
     }
 }
