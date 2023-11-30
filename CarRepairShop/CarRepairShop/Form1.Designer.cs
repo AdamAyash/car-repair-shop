@@ -33,17 +33,22 @@
             databaseConnectionBindingSource = new BindingSource(components);
             dataGridView2 = new DataGridView();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            insertToolStripMenuItem = new ToolStripMenuItem();
-            updateToolStripMenuItem = new ToolStripMenuItem();
-            deleteToolStripMenuItem = new ToolStripMenuItem();
-            databaseConnectionBindingSource1 = new BindingSource(components);
+            RMBInsert = new ToolStripMenuItem();
+            RMBUpdate = new ToolStripMenuItem();
+            RMBDelete = new ToolStripMenuItem();
+            RMBPreview = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripMenuItem5 = new ToolStripMenuItem();
-            toolStripMenuItem6 = new ToolStripMenuItem();
-            toolStripMenuItem7 = new ToolStripMenuItem();
+            ShowClients24h = new ToolStripMenuItem();
+            ShowMinAndMaxPrice = new ToolStripMenuItem();
+            ShowUnpaidCars = new ToolStripMenuItem();
+            ShowPaidCars = new ToolStripMenuItem();
+            ShowTop3MostRepairedBrands = new ToolStripMenuItem();
+            ShowClientWithMostPays = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripMenuItem();
+            LoadDataCars = new ToolStripMenuItem();
+            LoadDataClients = new ToolStripMenuItem();
+            LoadDataRepairs = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -82,36 +87,35 @@
             // contextMenuStrip1
             // 
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { insertToolStripMenuItem, updateToolStripMenuItem, deleteToolStripMenuItem });
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { RMBInsert, RMBUpdate, RMBDelete, RMBPreview });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(128, 76);
+            contextMenuStrip1.Size = new Size(130, 100);
             // 
-            // insertToolStripMenuItem
+            // RMBInsert
             // 
-            insertToolStripMenuItem.Name = "insertToolStripMenuItem";
-            insertToolStripMenuItem.Size = new Size(127, 24);
-            insertToolStripMenuItem.Text = "Insert";
+            RMBInsert.Name = "RMBInsert";
+            RMBInsert.Size = new Size(129, 24);
+            RMBInsert.Text = "Insert";
+            RMBInsert.Click += RMBInsert_Click;
             // 
-            // updateToolStripMenuItem
+            // RMBUpdate
             // 
-            updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            updateToolStripMenuItem.Size = new Size(127, 24);
-            updateToolStripMenuItem.Text = "Update";
+            RMBUpdate.Name = "RMBUpdate";
+            RMBUpdate.Size = new Size(129, 24);
+            RMBUpdate.Text = "Update";
+            RMBUpdate.Click += RMBUpdate_Click;
             // 
-            // deleteToolStripMenuItem
+            // RMBDelete
             // 
-            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(127, 24);
-            deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // databaseConnectionBindingSource1
-            // 
-            databaseConnectionBindingSource1.DataSource = typeof(DatabaseConnection);
+            RMBDelete.Name = "RMBDelete";
+            RMBDelete.Size = new Size(129, 24);
+            RMBDelete.Text = "Delete";
+            RMBDelete.Click += RMBDelete_Click;
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
@@ -121,40 +125,80 @@
             // 
             // toolStripMenuItem1
             // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem5, toolStripMenuItem6, toolStripMenuItem7 });
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { ShowClients24h, ShowMinAndMaxPrice, ShowUnpaidCars, ShowPaidCars, ShowTop3MostRepairedBrands, ShowClientWithMostPays });
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(31, 24);
-            toolStripMenuItem1.Text = "1";
+            toolStripMenuItem1.Size = new Size(71, 24);
+            toolStripMenuItem1.Text = "Spravki";
             // 
-            // toolStripMenuItem5
+            // ShowClients24h
             // 
-            toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(111, 26);
-            toolStripMenuItem5.Text = "1.1";
+            ShowClients24h.Name = "ShowClients24h";
+            ShowClients24h.Size = new Size(319, 26);
+            ShowClients24h.Text = "Show Clients 24h";
+            ShowClients24h.Click += ShowClients24h_Click;
             // 
-            // toolStripMenuItem6
+            // ShowMinAndMaxPrice
             // 
-            toolStripMenuItem6.Name = "toolStripMenuItem6";
-            toolStripMenuItem6.Size = new Size(111, 26);
-            toolStripMenuItem6.Text = "1.2";
+            ShowMinAndMaxPrice.Name = "ShowMinAndMaxPrice";
+            ShowMinAndMaxPrice.Size = new Size(319, 26);
+            ShowMinAndMaxPrice.Text = "Show Min/Max Price";
+            ShowMinAndMaxPrice.Click += ShowMinAndMaxPrice_Click;
             // 
-            // toolStripMenuItem7
+            // ShowUnpaidCars
             // 
-            toolStripMenuItem7.Name = "toolStripMenuItem7";
-            toolStripMenuItem7.Size = new Size(111, 26);
-            toolStripMenuItem7.Text = "1.3";
+            ShowUnpaidCars.Name = "ShowUnpaidCars";
+            ShowUnpaidCars.Size = new Size(319, 26);
+            ShowUnpaidCars.Text = "Show Unpaid Cars";
+            ShowUnpaidCars.Click += ShowUnpaidCars_Click;
+            // 
+            // ShowPaidCars
+            // 
+            ShowPaidCars.Name = "ShowPaidCars";
+            ShowPaidCars.Size = new Size(319, 26);
+            ShowPaidCars.Text = "Show Paid Cars";
+            ShowPaidCars.Click += ShowPaidCars_Click;
+            // 
+            // ShowTop3MostRepairedBrands
+            // 
+            ShowTop3MostRepairedBrands.Name = "ShowTop3MostRepairedBrands";
+            ShowTop3MostRepairedBrands.Size = new Size(319, 26);
+            ShowTop3MostRepairedBrands.Text = "Show Top 3 Most Repaired Brands";
+            ShowTop3MostRepairedBrands.Click += ShowTop3MostRepairedBrands_Click;
+            // 
+            // ShowClientWithMostPays
+            // 
+            ShowClientWithMostPays.Name = "ShowClientWithMostPays";
+            ShowClientWithMostPays.Size = new Size(319, 26);
+            ShowClientWithMostPays.Text = "Show Client With Most Pays";
+            ShowClientWithMostPays.Click += ShowClientWithMostPays_Click;
             // 
             // toolStripMenuItem2
             // 
+            toolStripMenuItem2.DropDownItems.AddRange(new ToolStripItem[] { LoadDataCars, LoadDataClients, LoadDataRepairs });
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(31, 24);
-            toolStripMenuItem2.Text = "2";
+            toolStripMenuItem2.Size = new Size(92, 24);
+            toolStripMenuItem2.Text = "Load Data";
             // 
-            // toolStripMenuItem3
+            // LoadDataCars
             // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(31, 24);
-            toolStripMenuItem3.Text = "3";
+            LoadDataCars.Name = "LoadDataCars";
+            LoadDataCars.Size = new Size(141, 26);
+            LoadDataCars.Text = "Cars";
+            LoadDataCars.Click += LoadDataCars_Click;
+            // 
+            // LoadDataClients
+            // 
+            LoadDataClients.Name = "LoadDataClients";
+            LoadDataClients.Size = new Size(141, 26);
+            LoadDataClients.Text = "Clients";
+            LoadDataClients.Click += LoadDataClients_Click;
+            // 
+            // LoadDataRepairs
+            // 
+            LoadDataRepairs.Name = "LoadDataRepairs";
+            LoadDataRepairs.Size = new Size(141, 26);
+            LoadDataRepairs.Text = "Repairs";
+            LoadDataRepairs.Click += LoadDataRepairs_Click;
             // 
             // Form1
             // 
@@ -184,15 +228,13 @@
         private DataGridView dataGridView2;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem toolStripMenuItem5;
-        private ToolStripMenuItem toolStripMenuItem6;
-        private ToolStripMenuItem toolStripMenuItem7;
+        private ToolStripMenuItem ShowClients24h;
+        private ToolStripMenuItem ShowMinAndMaxPrice;
+        private ToolStripMenuItem ShowUnpaidCars;
         private ToolStripMenuItem toolStripMenuItem2;
-        private ToolStripMenuItem toolStripMenuItem3;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem insertToolStripMenuItem;
         private ToolStripMenuItem updateToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
-        private BindingSource databaseConnectionBindingSource1;
     }
 }
