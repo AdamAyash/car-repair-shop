@@ -206,11 +206,8 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
-<<<<<<< Updated upstream
             SizeChanged += Form1_SizeChanged;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-=======
->>>>>>> Stashed changes
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             contextMenuStrip1.ResumeLayout(false);

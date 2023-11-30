@@ -22,11 +22,8 @@ namespace CarRepairShop
             Cars car = new Cars();
             car.NumberOfSeats = 0;
             car.YearOfProdyction = DateTime.Now;
-<<<<<<< Updated upstream
-            car.RegistrationNumber = 2;
-=======
+            car.RegistrationNumber = "2";
             car.RegistrationNumber = "123";
->>>>>>> Stashed changes
             car.BrandID = 1;
             car.ModelID = 1;
             car.ColordID = 0;
