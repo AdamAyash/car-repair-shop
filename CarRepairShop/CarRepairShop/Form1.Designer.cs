@@ -28,192 +28,196 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            databaseConnectionBindingSource = new BindingSource(components);
-            dataGridView2 = new DataGridView();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            RMBInsert = new ToolStripMenuItem();
-            RMBUpdate = new ToolStripMenuItem();
-            RMBDelete = new ToolStripMenuItem();
-            RMBPreview = new ToolStripMenuItem();
-            menuStrip1 = new MenuStrip();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            ShowClients24h = new ToolStripMenuItem();
-            ShowMinAndMaxPrice = new ToolStripMenuItem();
-            ShowUnpaidCars = new ToolStripMenuItem();
-            ShowPaidCars = new ToolStripMenuItem();
-            ShowTop3MostRepairedBrands = new ToolStripMenuItem();
-            ShowClientWithMostPays = new ToolStripMenuItem();
-            toolStripMenuItem2 = new ToolStripMenuItem();
-            LoadDataCars = new ToolStripMenuItem();
-            LoadDataClients = new ToolStripMenuItem();
-            LoadDataRepairs = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            contextMenuStrip1.SuspendLayout();
-            menuStrip1.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.databaseConnectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.RMBInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.RMBUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.RMBDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.RMBPreview = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowClients24h = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowMinAndMaxPrice = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowUnpaidCars = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowPaidCars = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowTop3MostRepairedBrands = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowClientWithMostPays = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadDataCars = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadDataClients = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadDataRepairs = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // databaseConnectionBindingSource
             // 
-            databaseConnectionBindingSource.DataSource = typeof(DatabaseConnection);
+            this.databaseConnectionBindingSource.DataSource = typeof(DatabaseConnection);
             // 
             // dataGridView2
             // 
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.ContextMenuStrip = contextMenuStrip1;
-            dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.Location = new Point(0, 30);
-            dataGridView2.Margin = new Padding(3, 4, 3, 4);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(832, 673);
-            dataGridView2.TabIndex = 0;
-            dataGridView2.CellMouseClick += dataGridView2_CellMouseClick;
-            ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            contextMenuStrip1.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 24);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(728, 503);
+            this.dataGridView2.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { RMBInsert, RMBUpdate, RMBDelete, RMBPreview });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(130, 100);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RMBInsert,
+            this.RMBUpdate,
+            this.RMBDelete,
+            this.RMBPreview});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(116, 92);
             // 
             // RMBInsert
             // 
-            RMBInsert.Name = "RMBInsert";
-            RMBInsert.Size = new Size(129, 24);
-            RMBInsert.Text = "Insert";
-            RMBInsert.Click += RMBInsert_Click;
+            this.RMBInsert.Name = "RMBInsert";
+            this.RMBInsert.Size = new System.Drawing.Size(115, 22);
+            this.RMBInsert.Text = "Insert";
+            this.RMBInsert.Click += new System.EventHandler(this.RMBInsert_Click);
             // 
             // RMBUpdate
             // 
-            RMBUpdate.Name = "RMBUpdate";
-            RMBUpdate.Size = new Size(129, 24);
-            RMBUpdate.Text = "Update";
-            RMBUpdate.Click += RMBUpdate_Click;
+            this.RMBUpdate.Name = "RMBUpdate";
+            this.RMBUpdate.Size = new System.Drawing.Size(115, 22);
+            this.RMBUpdate.Text = "Update";
+            this.RMBUpdate.Click += new System.EventHandler(this.RMBUpdate_Click);
             // 
             // RMBDelete
             // 
-            RMBDelete.Name = "RMBDelete";
-            RMBDelete.Size = new Size(129, 24);
-            RMBDelete.Text = "Delete";
-            RMBDelete.Click += RMBDelete_Click;
+            this.RMBDelete.Name = "RMBDelete";
+            this.RMBDelete.Size = new System.Drawing.Size(115, 22);
+            this.RMBDelete.Text = "Delete";
+            this.RMBDelete.Click += new System.EventHandler(this.RMBDelete_Click);
             // 
             // RMBPreview
             // 
-            RMBPreview.Name = "RMBPreview";
-            RMBPreview.Size = new Size(129, 24);
-            RMBPreview.Text = "Preview";
-            RMBPreview.Click += RMBPreview_Click;
+            this.RMBPreview.Name = "RMBPreview";
+            this.RMBPreview.Size = new System.Drawing.Size(115, 22);
+            this.RMBPreview.Text = "Preview";
+            this.RMBPreview.Click += new System.EventHandler(this.RMBPreview_Click);
             // 
             // menuStrip1
             // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2 });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(832, 30);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(728, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { ShowClients24h, ShowMinAndMaxPrice, ShowUnpaidCars, ShowPaidCars, ShowTop3MostRepairedBrands, ShowClientWithMostPays });
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(71, 24);
-            toolStripMenuItem1.Text = "Spravki";
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ShowClients24h,
+            this.ShowMinAndMaxPrice,
+            this.ShowUnpaidCars,
+            this.ShowPaidCars,
+            this.ShowTop3MostRepairedBrands,
+            this.ShowClientWithMostPays});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
+            this.toolStripMenuItem1.Text = "Spravki";
             // 
             // ShowClients24h
             // 
-            ShowClients24h.Name = "ShowClients24h";
-            ShowClients24h.Size = new Size(319, 26);
-            ShowClients24h.Text = "Show Clients 24h";
-            ShowClients24h.Click += ShowClients24h_Click;
+            this.ShowClients24h.Name = "ShowClients24h";
+            this.ShowClients24h.Size = new System.Drawing.Size(252, 22);
+            this.ShowClients24h.Text = "Show Clients 24h";
             // 
             // ShowMinAndMaxPrice
             // 
-            ShowMinAndMaxPrice.Name = "ShowMinAndMaxPrice";
-            ShowMinAndMaxPrice.Size = new Size(319, 26);
-            ShowMinAndMaxPrice.Text = "Show Min/Max Price";
-            ShowMinAndMaxPrice.Click += ShowMinAndMaxPrice_Click;
+            this.ShowMinAndMaxPrice.Name = "ShowMinAndMaxPrice";
+            this.ShowMinAndMaxPrice.Size = new System.Drawing.Size(252, 22);
+            this.ShowMinAndMaxPrice.Text = "Show Min/Max Price";
             // 
             // ShowUnpaidCars
             // 
-            ShowUnpaidCars.Name = "ShowUnpaidCars";
-            ShowUnpaidCars.Size = new Size(319, 26);
-            ShowUnpaidCars.Text = "Show Unpaid Cars";
-            ShowUnpaidCars.Click += ShowUnpaidCars_Click;
+            this.ShowUnpaidCars.Name = "ShowUnpaidCars";
+            this.ShowUnpaidCars.Size = new System.Drawing.Size(252, 22);
+            this.ShowUnpaidCars.Text = "Show Unpaid Cars";
             // 
             // ShowPaidCars
             // 
-            ShowPaidCars.Name = "ShowPaidCars";
-            ShowPaidCars.Size = new Size(319, 26);
-            ShowPaidCars.Text = "Show Paid Cars";
-            ShowPaidCars.Click += ShowPaidCars_Click;
+            this.ShowPaidCars.Name = "ShowPaidCars";
+            this.ShowPaidCars.Size = new System.Drawing.Size(252, 22);
+            this.ShowPaidCars.Text = "Show Paid Cars";
             // 
             // ShowTop3MostRepairedBrands
             // 
-            ShowTop3MostRepairedBrands.Name = "ShowTop3MostRepairedBrands";
-            ShowTop3MostRepairedBrands.Size = new Size(319, 26);
-            ShowTop3MostRepairedBrands.Text = "Show Top 3 Most Repaired Brands";
-            ShowTop3MostRepairedBrands.Click += ShowTop3MostRepairedBrands_Click;
+            this.ShowTop3MostRepairedBrands.Name = "ShowTop3MostRepairedBrands";
+            this.ShowTop3MostRepairedBrands.Size = new System.Drawing.Size(252, 22);
+            this.ShowTop3MostRepairedBrands.Text = "Show Top 3 Most Repaired Brands";
             // 
             // ShowClientWithMostPays
             // 
-            ShowClientWithMostPays.Name = "ShowClientWithMostPays";
-            ShowClientWithMostPays.Size = new Size(319, 26);
-            ShowClientWithMostPays.Text = "Show Client With Most Pays";
-            ShowClientWithMostPays.Click += ShowClientWithMostPays_Click;
+            this.ShowClientWithMostPays.Name = "ShowClientWithMostPays";
+            this.ShowClientWithMostPays.Size = new System.Drawing.Size(252, 22);
+            this.ShowClientWithMostPays.Text = "Show Client With Most Pays";
             // 
             // toolStripMenuItem2
             // 
-            toolStripMenuItem2.DropDownItems.AddRange(new ToolStripItem[] { LoadDataCars, LoadDataClients, LoadDataRepairs });
-            toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(92, 24);
-            toolStripMenuItem2.Text = "Load Data";
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LoadDataCars,
+            this.LoadDataClients,
+            this.LoadDataRepairs});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(72, 20);
+            this.toolStripMenuItem2.Text = "Load Data";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // LoadDataCars
             // 
-            LoadDataCars.Name = "LoadDataCars";
-            LoadDataCars.Size = new Size(141, 26);
-            LoadDataCars.Text = "Cars";
-            LoadDataCars.Click += LoadDataCars_Click;
+            this.LoadDataCars.Name = "LoadDataCars";
+            this.LoadDataCars.Size = new System.Drawing.Size(112, 22);
+            this.LoadDataCars.Text = "Cars";
+            this.LoadDataCars.Click += new System.EventHandler(this.LoadDataCars_Click);
             // 
             // LoadDataClients
             // 
-            LoadDataClients.Name = "LoadDataClients";
-            LoadDataClients.Size = new Size(141, 26);
-            LoadDataClients.Text = "Clients";
-            LoadDataClients.Click += LoadDataClients_Click;
+            this.LoadDataClients.Name = "LoadDataClients";
+            this.LoadDataClients.Size = new System.Drawing.Size(112, 22);
+            this.LoadDataClients.Text = "Clients";
             // 
             // LoadDataRepairs
             // 
-            LoadDataRepairs.Name = "LoadDataRepairs";
-            LoadDataRepairs.Size = new Size(141, 26);
-            LoadDataRepairs.Text = "Repairs";
-            LoadDataRepairs.Click += LoadDataRepairs_Click;
+            this.LoadDataRepairs.Name = "LoadDataRepairs";
+            this.LoadDataRepairs.Size = new System.Drawing.Size(112, 22);
+            this.LoadDataRepairs.Text = "Repairs";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(832, 703);
-            Controls.Add(dataGridView2);
-            Controls.Add(menuStrip1);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "Form1";
-            Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(728, 527);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

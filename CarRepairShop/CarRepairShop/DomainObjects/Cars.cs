@@ -19,11 +19,11 @@ namespace CarRepairShop.DomainObjects
 
         public int ColordID { get; set; }
 
-        public DateTime YearOfProdyction { get; set; }
+        public DateTime YearOfProduction{ get; set; }
 
         public int NumberOfSeats { get; set; }
 
-        public int RepairPrice { get; set; }
+        public double RepairPrice { get; set; }
 
         public Cars()
         {
@@ -35,6 +35,9 @@ namespace CarRepairShop.DomainObjects
             RegistrationNumber = source.Field<string>("REGISTRATION_NUMBER");
             BrandID = source.Field<int>("BRAND_ID");
             ModelID = source.Field<int>("MODEL_ID");
+            NumberOfSeats = source.Field<int>("NUMBER_OF_SEATS");
+            RepairPrice = source.Field<double>("REPAIR_PRICE");
+            YearOfProduction = source.Field<DateTime>("YEAR_OF_PRODUCTION");
         }
     }
   

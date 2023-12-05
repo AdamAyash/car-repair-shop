@@ -1,0 +1,158 @@
+DROP TABLE IF EXISTS BRANDS
+GO
+
+CREATE TABLE BRANDS
+(
+	ID		INT	IDENTITY(1,1)		NOT NULL,
+	[NAME]	VARCHAR(32)				NOT NULL
+	CONSTRAINT PK_BRAND_ID PRIMARY KEY(ID)
+)
+GO
+
+CREATE UNIQUE INDEX UX_BRANDS_NAME
+ON BRANDS
+(
+	[NAME]
+)
+
+DROP TABLE IF EXISTS MODELS
+GO
+
+CREATE TABLE MODELS
+(
+	ID		INT	IDENTITY(1,1)		NOT NULL,
+	[NAME]	VARCHAR(32)				NOT NULL
+	CONSTRAINT PK_MODEL_ID PRIMARY KEY(ID)
+)
+GO
+
+CREATE UNIQUE INDEX UX_MODELS_NAME
+ON MODELS
+(
+	[NAME]
+)
+
+DROP TABLE IF EXISTS CARS
+GO
+
+CREATE TABLE CARS
+(
+	ID					INT	IDENTITY(1,1)		NOT NULL,
+	REGISTRATION_NUMBER	VARCHAR(32)				NOT NULL,
+	BRAND_ID			INT						NOT NULL,
+	MODEL_ID			INT						NOT NULL,
+	COLOR_ID			INT						NOT NULL,
+	YEAR_OF_PRODUCTION	DATETIME				NOT NULL,
+	NUMBER_OF_SEATS		INT						NOT NULL,
+	REPAIR_PRICE		FLOAT					NOT NULL,
+	CONSTRAINT PK_CARS_ID PRIMARY KEY(ID),
+	CONSTRAINT FK_CARS_BRANDS_ID FOREIGN KEY(BRAND_ID)
+	REFERENCES BRANDS(ID),
+	CONSTRAINT FK_CARS_MODELS_ID FOREIGN KEY(MODEL_ID)
+	REFERENCES MODELS(ID)
+)
+GO
+
+
+DROP TABLE IF EXISTS CITIES
+GO
+
+CREATE TABLE CITIES
+(
+	ID		INT	IDENTITY(1,1)		NOT NULL,
+	[NAME]	VARCHAR(32)				NOT NULL
+	CONSTRAINT PK_CITIES_ID PRIMARY KEY(ID)
+)
+GO
+
+CREATE UNIQUE INDEX UX_CITIES_NAME
+ON CITIES
+(
+	[NAME]
+)
+
+DROP TABLE IF EXISTS CLIENTS
+GO
+
+CREATE TABLE CLIENTS
+(
+	ID				INT	IDENTITY(1,1)	NOT NULL,
+	[NAME]			VARCHAR(64)			NOT NULL,
+	IDENTITY_NUMBER	VARCHAR(32)			NOT NULL,
+	CITY_ID			INT					NOT NULL,
+	[ADDRESS]		VARCHAR(64)			NOT NULL,
+	TELEPHONE		VARCHAR(16)			NOT NULL,
+	CONSTRAINT PK_CLIENTS_ID PRIMARY KEY(ID),
+	CONSTRAINT FK_CLIENTS_CITIES_ID FOREIGN KEY(CITY_ID)
+	REFERENCES CITIES(ID)
+)
+GO
+
+CREATE UNIQUE INDEX UX_CLIENTS_IDENTITY_NUMBER
+ON CLIENTS
+(
+	IDENTITY_NUMBER
+)
+
+DROP TABLE IF EXISTS REPAIRS
+GO
+
+CREATE TABLE REPAIRS
+(
+	ID			INT IDENTITY(1,1)	NOT NULL,
+	CLIENT_ID	INT					NOT NULL,
+	CAR_ID		INT					NOT NULL,
+	BEGIN_DATE	DATETIME			NOT NULL,
+	END_DATE	DATETIME			NOT NULL,
+	IS_PAYED	TINYINT				NOT NULL,
+	IS_RETURNED TINYINT				NOT NULL
+	CONSTRAINT PK_REPAIRS_ID PRIMARY KEY(ID),
+	CONSTRAINT FK_REPAIRS_CLIENTS_ID FOREIGN KEY(CLIENT_ID)
+	REFERENCES CLIENTS(ID),
+	CONSTRAINT FK_REPAIRS_CARS_ID FOREIGN KEY(CAR_ID)
+	REFERENCES CARS(ID)
+)
+GO
+
+
+insert into BRANDS ( NAME) values ('Mazda');
+insert into BRANDS ( NAME) values ('Daewoo');
+insert into BRANDS ( NAME) values ('Mercury');
+insert into BRANDS ( NAME) values ('Ford');
+insert into BRANDS ( NAME) values ('Chevrolet');
+insert into BRANDS ( NAME) values ('BMW');
+insert into BRANDS ( NAME) values ('Infiniti');
+insert into BRANDS ( NAME) values ('Volkswagen');
+insert into BRANDS ( NAME) values ('Saab');
+insert into BRANDS ( NAME) values ( 'Audi');
+insert into BRANDS ( NAME) values ( 'Dodge');
+insert into BRANDS ( NAME) values ( 'Porsche');
+insert into BRANDS ( NAME) values ( 'Nissan');
+insert into BRANDS ( NAME) values ( 'Volvo');
+insert into BRANDS ( NAME) values ( 'Mercedes-Benz');
+insert into BRANDS ( NAME) values ( 'Dodge');
+insert into BRANDS ( NAME) values ( 'Saab');
+insert into BRANDS ( NAME) values ( 'Audi');
+
+insert into MODELS (NAME) values ('Legacy');
+insert into MODELS (NAME) values ('GTI');
+insert into MODELS (NAME) values ('Mulsanne');
+insert into MODELS (NAME) values ('Sonata');
+insert into MODELS (NAME) values ('Silverado 2500');
+insert into MODELS (NAME) values ('Escalade');
+insert into MODELS (NAME) values ('Celica');
+insert into MODELS (NAME) values ('XJ');
+insert into MODELS (NAME) values ('Corolla');
+insert into MODELS (NAME) values ('612 Scaglietti');
+insert into MODELS (NAME) values ('Mirage');
+insert into MODELS (NAME) values ('Malibu');
+insert into MODELS (NAME) values ('Odyssey');
+insert into MODELS (NAME) values ('Aveo');
+insert into MODELS (NAME) values ('Corvette');
+insert into MODELS (NAME) values ('1 Series');
+insert into MODELS (NAME) values ('Odyssey');
+insert into MODELS (NAME) values ('Suburban');
+insert into MODELS (NAME) values ('Cobalt SS');
+insert into MODELS (NAME) values ('Golf');
+
+

@@ -9,7 +9,7 @@ public class DatabaseConnection
     //Constants:
     //-------------------------
     private const string CREDITIONALS =
-            @"Data Source=DESKTOP-LLGLM3I\AAYASH;
+            @"Data Source=DESKTOP-CREALSR\AAYASH;
             Initial Catalog=CarRepairShop;
            Integrated Security=True;
             TrustServerCertificate=True;";
