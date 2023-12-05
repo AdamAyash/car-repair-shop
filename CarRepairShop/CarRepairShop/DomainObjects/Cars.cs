@@ -33,6 +33,8 @@ namespace CarRepairShop.DomainObjects
         {
             ID = source.Field<int>("ID");
             RegistrationNumber = source.Field<string>("REGISTRATION_NUMBER");
+            BrandID = source.Field<int>("BRAND_ID");
+            ModelID = source.Field<int>("MODEL_ID");
         }
     }
   

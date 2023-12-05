@@ -72,6 +72,13 @@
             dataGridView2.Size = new Size(832, 673);
             dataGridView2.TabIndex = 0;
             dataGridView2.CellMouseClick += dataGridView2_CellMouseClick;
+            ((System.ComponentModel.ISupportInitialize)databaseConnectionBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
             // 
             // contextMenuStrip1
             // 
