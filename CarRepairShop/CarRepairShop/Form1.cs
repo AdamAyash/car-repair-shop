@@ -10,6 +10,10 @@ namespace CarRepairShop
     public partial class Form1 : Form
     {
         private DatabaseConnection databaseConnection;
+
+        private bool isCarsLoaded = false;
+        private bool isClientsLoaded = false;
+        private bool isRepairsLoaded = false;
         public Form1()
         {
             InitializeComponent();
@@ -127,7 +131,7 @@ namespace CarRepairShop
             record.RegistrationNumber = sqlReder["REGISTRATION_NUMBER"].ToString();
             record.NumberOfSeats = int.Parse(sqlReder["NUMBER_OF_SEATS"].ToString());
             record.ColordID = int.Parse(sqlReder["COLOR_ID"].ToString());
-            // record.YearOfProduction.Date. (sqlReder["YEAR_OF_PRODUCTION"].ToString();
+            //record.YearOfProduction. = sqlReder["YEAR_OF_PRODUCTION"].ToString();
             record.RepairPrice = double.Parse(sqlReder["REPAIR_PRICE"].ToString());
         }
 
@@ -141,16 +145,29 @@ namespace CarRepairShop
             dt.Load(sqlReder);
             dataGridView2.DataSource = dt;
             dataGridView2.Refresh();
+            isCarsLoaded = true;
+            isClientsLoaded = false;
+            isRepairsLoaded = false;
         }
 
         private void LoadDataClients_Click(object sender, EventArgs e)
         {
-
+            SqlCommand command = new SqlCommand("SELECT * FROM CLIENTS", databaseConnection.Connection);
+            SqlDataReader sqlReder = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(sqlReder);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Refresh();
         }
 
         private void LoadDataRepairs_Click(object sender, EventArgs e)
         {
-
+            SqlCommand command = new SqlCommand("SELECT * FROM REPAIRS", databaseConnection.Connection);
+            SqlDataReader sqlReder = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(sqlReder);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Refresh();
         }
         //Krai na Load Data
 
@@ -158,27 +175,31 @@ namespace CarRepairShop
         //Context Menu (RMB)
         private void RMBInsert_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Cars car = new Cars();
-                CarsForm carsForm = new CarsForm(car);
-                carsForm.ShowDialog();
+            if(isCarsLoaded)
+                {
 
-               // if (carsForm.ShowDialog() != DialogResult.OK)
-                   // return;
+                try
+                {
+                    Cars car = new Cars();
+                    CarsForm carsForm = new CarsForm(car);
+                    carsForm.ShowDialog();
 
-                insertCarRecord(car);
-                LoadDataCars_Click(this, EventArgs.Empty);
+                    // if (carsForm.ShowDialog() != DialogResult.OK)
+                    // return;
+
+                    insertCarRecord(car);
+                    LoadDataCars_Click(this, EventArgs.Empty);
+                }
+                catch
+                {
+                    return;
+                }
             }
-            catch
-            {
-                return;
-            }
+
         }
 
         private void RMBUpdate_Click(object sender, EventArgs e)
         {
-
             try
             {
                 DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
@@ -194,8 +215,6 @@ namespace CarRepairShop
             {
                 return;
             }
-
-
         }
 
         private void RMBDelete_Click(object sender, EventArgs e)

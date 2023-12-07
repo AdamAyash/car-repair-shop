@@ -26,16 +26,15 @@ namespace CarRepairShop
             _carRecord = carRecord;
             brands = new List<Brands>();
             models = new List<Models>();
-            CarsForm_Load(this, EventArgs.Empty);
+            Load();
         }
 
-        private void CarsForm_Load(object sender, EventArgs e)
+        private void Load()
         {
-
             //Зареждаме комбото с брандовете
             DatabaseConnection databaseConnection = DatabaseConnection.GetDatebaseConnectionInstance();
             SqlCommand command = new SqlCommand("SELECT * FROM BRANDS", databaseConnection.Connection);
-            SqlDataReader reader= command.ExecuteReader();
+            SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
@@ -45,15 +44,15 @@ namespace CarRepairShop
 
                 brands.Add(currentBrand);
             }
-            
-            foreach(Brands brand in brands)
+
+            foreach (Brands brand in brands)
             {
                 comboBox1.Items.Add(brand.Name);
             }
 
-           
-            command.Clone();
+
             reader.Close();
+            command.Clone();
 
             command = new SqlCommand("SELECT * FROM MODELS", databaseConnection.Connection);
             reader = command.ExecuteReader();
@@ -80,7 +79,7 @@ namespace CarRepairShop
 
             List<Models> modelsList = models.Where(m => m.ID == _carRecord.ModelID).ToList();
             comboBox2.SelectedItem = modelsList[0].Name;
-            
+
 
             List<Brands> brandsList = brands.Where(b => b.ID == _carRecord.BrandID).ToList();
 
@@ -90,8 +89,8 @@ namespace CarRepairShop
             textBox2.Text = _carRecord.NumberOfSeats.ToString();
             textBox3.Text = _carRecord.RepairPrice.ToString();
             textBox1.Text = _carRecord.RegistrationNumber;
-
         }
+
 
         private void Apply_Click(object sender, EventArgs e)
         {

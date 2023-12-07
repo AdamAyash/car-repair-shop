@@ -2003,19 +2003,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mobir\\.nuget\\packages\\": {}
+    "C:\\Users\\Adam Ayash\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mobir\\Documents\\Projects\\car-repair-shop\\CarRepairShop\\CarRepairShop\\CarRepairShop.csproj",
+      "projectUniqueName": "C:\\Users\\Adam Ayash\\Documents\\GitHub\\car-repair-shop\\CarRepairShop\\CarRepairShop\\CarRepairShop.csproj",
       "projectName": "CarRepairShop",
-      "projectPath": "C:\\Users\\mobir\\Documents\\Projects\\car-repair-shop\\CarRepairShop\\CarRepairShop\\CarRepairShop.csproj",
-      "packagesPath": "C:\\Users\\mobir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mobir\\Documents\\Projects\\car-repair-shop\\CarRepairShop\\CarRepairShop\\obj\\",
+      "projectPath": "C:\\Users\\Adam Ayash\\Documents\\GitHub\\car-repair-shop\\CarRepairShop\\CarRepairShop\\CarRepairShop.csproj",
+      "packagesPath": "C:\\Users\\Adam Ayash\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Adam Ayash\\Documents\\GitHub\\car-repair-shop\\CarRepairShop\\CarRepairShop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mobir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Adam Ayash\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2065,7 +2065,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
