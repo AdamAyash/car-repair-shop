@@ -1,3 +1,12 @@
+DROP TABLE IF EXISTS REPAIRS
+GO
+
+DROP TABLE IF EXISTS CLIENTS
+GO
+
+DROP TABLE IF EXISTS CARS
+GO
+
 DROP TABLE IF EXISTS BRANDS
 GO
 
@@ -32,8 +41,6 @@ ON MODELS
 	[NAME]
 )
 
-DROP TABLE IF EXISTS CARS
-GO
 
 CREATE TABLE CARS
 (
@@ -71,8 +78,7 @@ ON CITIES
 	[NAME]
 )
 
-DROP TABLE IF EXISTS CLIENTS
-GO
+
 
 CREATE TABLE CLIENTS
 (
@@ -94,8 +100,7 @@ ON CLIENTS
 	IDENTITY_NUMBER
 )
 
-DROP TABLE IF EXISTS REPAIRS
-GO
+
 
 CREATE TABLE REPAIRS
 (
@@ -121,38 +126,13 @@ insert into BRANDS ( NAME) values ('Mercury');
 insert into BRANDS ( NAME) values ('Ford');
 insert into BRANDS ( NAME) values ('Chevrolet');
 insert into BRANDS ( NAME) values ('BMW');
-insert into BRANDS ( NAME) values ('Infiniti');
-insert into BRANDS ( NAME) values ('Volkswagen');
-insert into BRANDS ( NAME) values ('Saab');
-insert into BRANDS ( NAME) values ( 'Audi');
-insert into BRANDS ( NAME) values ( 'Dodge');
-insert into BRANDS ( NAME) values ( 'Porsche');
-insert into BRANDS ( NAME) values ( 'Nissan');
-insert into BRANDS ( NAME) values ( 'Volvo');
-insert into BRANDS ( NAME) values ( 'Mercedes-Benz');
-insert into BRANDS ( NAME) values ( 'Dodge');
-insert into BRANDS ( NAME) values ( 'Saab');
-insert into BRANDS ( NAME) values ( 'Audi');
+
 
 insert into MODELS (NAME) values ('Legacy');
 insert into MODELS (NAME) values ('GTI');
 insert into MODELS (NAME) values ('Mulsanne');
 insert into MODELS (NAME) values ('Sonata');
 insert into MODELS (NAME) values ('Silverado 2500');
-insert into MODELS (NAME) values ('Escalade');
-insert into MODELS (NAME) values ('Celica');
-insert into MODELS (NAME) values ('XJ');
-insert into MODELS (NAME) values ('Corolla');
-insert into MODELS (NAME) values ('612 Scaglietti');
-insert into MODELS (NAME) values ('Mirage');
-insert into MODELS (NAME) values ('Malibu');
-insert into MODELS (NAME) values ('Odyssey');
-insert into MODELS (NAME) values ('Aveo');
-insert into MODELS (NAME) values ('Corvette');
-insert into MODELS (NAME) values ('1 Series');
-insert into MODELS (NAME) values ('Odyssey');
-insert into MODELS (NAME) values ('Suburban');
-insert into MODELS (NAME) values ('Cobalt SS');
-insert into MODELS (NAME) values ('Golf');
+
 
 
