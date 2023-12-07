@@ -1,3 +1,6 @@
+USE[CarRepairShop]
+GO
+
 DROP TABLE IF EXISTS REPAIRS
 GO
 

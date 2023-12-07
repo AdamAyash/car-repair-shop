@@ -128,3 +128,4 @@ C:\Users\Adam Ayash\Documents\GitHub\car-repair-shop\CarRepairShop\CarRepairShop
 C:\Users\Adam Ayash\Documents\GitHub\car-repair-shop\CarRepairShop\CarRepairShop\obj\Debug\net6.0-windows\ref\CarRepairShop.dll
 C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\obj\Debug\net6.0-windows\CarRepairShop.Properties.Resources.resources
 C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\obj\Debug\net6.0-windows\CarRepairShop.CarsForm.resources
+C:\Users\vaset\Desktop\car-repair-shop\CarRepairShop\CarRepairShop\obj\Debug\net6.0-windows\CarRepairShop.CarsForm.resources

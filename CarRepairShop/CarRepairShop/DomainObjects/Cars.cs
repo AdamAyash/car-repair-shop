@@ -35,6 +35,7 @@ namespace CarRepairShop.DomainObjects
             RegistrationNumber = source.Field<string>("REGISTRATION_NUMBER");
             BrandID = source.Field<int>("BRAND_ID");
             ModelID = source.Field<int>("MODEL_ID");
+            ColordID = source.Field<int>("COLOR_ID");
             NumberOfSeats = source.Field<int>("NUMBER_OF_SEATS");
             RepairPrice = source.Field<double>("REPAIR_PRICE");
             YearOfProduction = source.Field<DateTime>("YEAR_OF_PRODUCTION");
