@@ -28,107 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            comboBox1 = new ComboBox();
-            textBox4 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            SuspendLayout();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(31, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(280, 27);
-            textBox1.TabIndex = 0;
+            this.textBox1.Location = new System.Drawing.Point(27, 30);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(246, 23);
+            this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(31, 82);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(280, 27);
-            textBox2.TabIndex = 1;
+            this.textBox2.Location = new System.Drawing.Point(27, 62);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(246, 23);
+            this.textBox2.TabIndex = 1;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(31, 174);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(280, 27);
-            textBox3.TabIndex = 2;
+            this.textBox3.Location = new System.Drawing.Point(27, 130);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(246, 23);
+            this.textBox3.TabIndex = 2;
             // 
             // comboBox1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(31, 126);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(198, 28);
-            comboBox1.TabIndex = 3;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(27, 94);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(174, 23);
+            this.comboBox1.TabIndex = 3;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(29, 220);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(282, 27);
-            textBox4.TabIndex = 4;
+            this.textBox4.Location = new System.Drawing.Point(25, 165);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(247, 23);
+            this.textBox4.TabIndex = 4;
             // 
             // button1
             // 
-            button1.Location = new Point(117, 274);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 5;
-            button1.Text = "Apply";
-            button1.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(102, 206);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 22);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Apply";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Apply_Click);
             // 
             // button2
             // 
-            button2.Location = new Point(217, 274);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 6;
-            button2.Text = "Close";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(117, 264);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 5;
-            button3.Text = "Apply";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(217, 264);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 6;
-            button4.Text = "Close";
-            button4.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(190, 206);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(82, 22);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Close";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // ClientsForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(332, 349);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Name = "ClientsForm";
-            Text = "ClientsForm";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(290, 262);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "ClientsForm";
+            this.Text = "ClientsForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

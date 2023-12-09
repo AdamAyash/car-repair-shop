@@ -1,9 +1,7 @@
 using CarRepairShop.DomainObjects;
 using Microsoft.Data.SqlClient;
-using System;
 using System.Data;
-using System.Data.Common;
-using System.Windows.Forms;
+
 
 namespace CarRepairShop
 {
@@ -67,6 +65,26 @@ namespace CarRepairShop
             return true;
         }
 
+        private bool updateClientRecord(Clients clientRecord)
+        {
+            string query = "UPDATE CLIENTS";
+            query += " SET NAME = @NAME, IDENTITY_NUMBER = @IDENTITY_NUMBER, CITY_ID = @CITY_ID,  ADDRESS = @ADDRESS," +
+                " TELEPHONE = @TELEPHONE " +
+                " WHERE ID =  " + clientRecord.ID.ToString();
+
+            SqlCommand myCommand = new SqlCommand(query, databaseConnection.Connection);
+
+            myCommand.Parameters.AddWithValue("@NAME", clientRecord.Name);
+            myCommand.Parameters.AddWithValue("@IDENTITY_NUMBER", clientRecord.IdentityNumber);
+            myCommand.Parameters.AddWithValue("@CITY_ID", clientRecord.CityID);
+            myCommand.Parameters.AddWithValue("@ADDRESS", clientRecord.Address);
+            myCommand.Parameters.AddWithValue("@TELEPHONE", clientRecord.Telephone);
+
+            myCommand.ExecuteNonQuery();
+
+            return true;
+        }
+
         private bool insertCarRecord(Cars record)
         {
             string query = "INSERT INTO CARS";
@@ -83,6 +101,23 @@ namespace CarRepairShop
             myCommand.Parameters.AddWithValue("@PRICE", record.RepairPrice);
 
             myCommand.ExecuteNonQuery();
+            return true;
+        }
+
+        private bool insertClient(Clients clientRecord)
+        {
+            string query = "INSERT INTO CLIENTS ";
+            query += "VALUES(@NAME, @IDENTITY_NUMBER, @CITY_ID, @ADDRESS, @TELEPHONE)";
+            SqlCommand myCommand = new SqlCommand(query, databaseConnection.Connection);
+
+            myCommand.Parameters.AddWithValue("@NAME", clientRecord.Name);
+            myCommand.Parameters.AddWithValue("@IDENTITY_NUMBER", clientRecord.IdentityNumber);
+            myCommand.Parameters.AddWithValue("@CITY_ID", clientRecord.CityID);
+            myCommand.Parameters.AddWithValue("@ADDRESS", clientRecord.Address);
+            myCommand.Parameters.AddWithValue("@TELEPHONE", clientRecord.Telephone);
+
+            myCommand.ExecuteNonQuery();
+
             return true;
         }
 
@@ -158,6 +193,9 @@ namespace CarRepairShop
             dt.Load(sqlReder);
             dataGridView2.DataSource = dt;
             dataGridView2.Refresh();
+            isCarsLoaded = false;
+            isClientsLoaded = true;
+            isRepairsLoaded = false;
         }
 
         private void LoadDataRepairs_Click(object sender, EventArgs e)
@@ -195,63 +233,134 @@ namespace CarRepairShop
                     return;
                 }
             }
+            else if (isClientsLoaded)
+            {
+                try
+                {
+                    Clients client = new Clients();
+                    ClientsForm clientsForm = new ClientsForm(client);
+                    clientsForm.ShowDialog();
+                    insertClient(client);
+                    LoadDataClients_Click(this, EventArgs.Empty);
+                }
+                catch
+                {
+                    return;
+                }
+            }
 
         }
 
         private void RMBUpdate_Click(object sender, EventArgs e)
         {
-            try
+            if (isCarsLoaded)
             {
-                DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
-                Cars car = new Cars(row);
-                CarsForm carsForm = new CarsForm(car);
-                carsForm.ShowDialog();
+                try
+                {
+                    DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                    Cars car = new Cars(row);
+                    CarsForm carsForm = new CarsForm(car);
+                    carsForm.ShowDialog();
 
 
-                updateCarRecord(car);
-                LoadDataCars_Click(this, EventArgs.Empty);
+                    updateCarRecord(car);
+                    LoadDataCars_Click(this, EventArgs.Empty);
+                }
+                catch
+                {
+                    return;
+                }
             }
-            catch
+            else if (isClientsLoaded)
             {
-                return;
+                try
+                {
+                    DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                    Clients clientRecord = new Clients(row);
+                    ClientsForm clientForm = new ClientsForm(clientRecord);
+                    clientForm.ShowDialog();
+
+
+                    updateClientRecord(clientRecord);
+                    LoadDataClients_Click(this, EventArgs.Empty);
+                }
+                catch
+                {
+                    return;
+                }
             }
         }
 
         private void RMBDelete_Click(object sender, EventArgs e)
         {
-
-            try
+            if (isCarsLoaded)
             {
-                DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
-                Cars car = new Cars(row);
+                try
+                {
+                    DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                    Cars car = new Cars(row);
 
-                SqlCommand sqlCommand = new SqlCommand("DELETE FROM CARS WHERE ID = " + car.ID, databaseConnection.Connection);
-                sqlCommand.ExecuteNonQuery();
+                    SqlCommand sqlCommand = new SqlCommand("DELETE FROM CARS WHERE ID = " + car.ID, databaseConnection.Connection);
+                    sqlCommand.ExecuteNonQuery();
 
-                LoadDataCars_Click(this, EventArgs.Empty);
+                    LoadDataCars_Click(this, EventArgs.Empty);
+                }
+
+                catch
+                {
+                    return;
+                }
             }
-
-            catch
+            else if (isClientsLoaded)
             {
-                return;
+                try
+                {
+                    DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                    Clients clientRecord = new Clients(row);
+
+                    SqlCommand sqlCommand = new SqlCommand("DELETE FROM CLIENTS WHERE ID = " + clientRecord.ID, databaseConnection.Connection);
+                    sqlCommand.ExecuteNonQuery();
+
+                    LoadDataClients_Click(this, EventArgs.Empty);
+                }
+                catch
+                {
+                    return;
+                }
             }
         }
 
         private void RMBPreview_Click(object sender, EventArgs e)
         {
-            try
+            if (isCarsLoaded)
             {
-                DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
-                Cars car = new Cars(row);
-                CarsForm carsForm = new CarsForm(car);
-                carsForm.ShowDialog();
+                try
+                {
+                    DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                    Cars car = new Cars(row);
+                    CarsForm carsForm = new CarsForm(car);
+                    carsForm.ShowDialog();
+                }
 
-                if (carsForm.ShowDialog() != DialogResult.OK)
+                catch
+                {
                     return;
+                }
             }
-            catch
+            else if (isClientsLoaded)
             {
-                return;
+                try
+                {
+                    DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                    Clients client = new Clients(row);
+                    ClientsForm clientForm = new ClientsForm(client);
+                    clientForm.ShowDialog();
+
+                }
+                catch
+                {
+                    return;
+                }
             }
         }
 

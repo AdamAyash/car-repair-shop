@@ -185,21 +185,23 @@
             // LoadDataCars
             // 
             this.LoadDataCars.Name = "LoadDataCars";
-            this.LoadDataCars.Size = new System.Drawing.Size(112, 22);
+            this.LoadDataCars.Size = new System.Drawing.Size(180, 22);
             this.LoadDataCars.Text = "Cars";
             this.LoadDataCars.Click += new System.EventHandler(this.LoadDataCars_Click);
             // 
             // LoadDataClients
             // 
             this.LoadDataClients.Name = "LoadDataClients";
-            this.LoadDataClients.Size = new System.Drawing.Size(112, 22);
+            this.LoadDataClients.Size = new System.Drawing.Size(180, 22);
             this.LoadDataClients.Text = "Clients";
+            this.LoadDataClients.Click += new System.EventHandler(this.LoadDataClients_Click);
             // 
             // LoadDataRepairs
             // 
             this.LoadDataRepairs.Name = "LoadDataRepairs";
-            this.LoadDataRepairs.Size = new System.Drawing.Size(112, 22);
+            this.LoadDataRepairs.Size = new System.Drawing.Size(180, 22);
             this.LoadDataRepairs.Text = "Repairs";
+            this.LoadDataRepairs.Click += new System.EventHandler(this.LoadDataRepairs_Click);
             // 
             // Form1
             // 
