@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.databaseConnectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RMBInsert = new System.Windows.Forms.ToolStripMenuItem();
             this.RMBUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.RMBDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.RMBPreview = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseConnectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ShowClients24h = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,15 +48,11 @@
             this.LoadDataCars = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadDataClients = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadDataRepairs = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // databaseConnectionBindingSource
-            // 
-            this.databaseConnectionBindingSource.DataSource = typeof(DatabaseConnection);
             // 
             // dataGridView2
             // 
@@ -70,6 +66,7 @@
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(728, 503);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.UseWaitCursor = true;
             // 
             // contextMenuStrip1
             // 
@@ -109,6 +106,10 @@
             this.RMBPreview.Size = new System.Drawing.Size(115, 22);
             this.RMBPreview.Text = "Preview";
             this.RMBPreview.Click += new System.EventHandler(this.RMBPreview_Click);
+            // 
+            // databaseConnectionBindingSource
+            // 
+            this.databaseConnectionBindingSource.DataSource = typeof(DatabaseConnection);
             // 
             // menuStrip1
             // 
@@ -185,21 +186,21 @@
             // LoadDataCars
             // 
             this.LoadDataCars.Name = "LoadDataCars";
-            this.LoadDataCars.Size = new System.Drawing.Size(180, 22);
+            this.LoadDataCars.Size = new System.Drawing.Size(112, 22);
             this.LoadDataCars.Text = "Cars";
             this.LoadDataCars.Click += new System.EventHandler(this.LoadDataCars_Click);
             // 
             // LoadDataClients
             // 
             this.LoadDataClients.Name = "LoadDataClients";
-            this.LoadDataClients.Size = new System.Drawing.Size(180, 22);
+            this.LoadDataClients.Size = new System.Drawing.Size(112, 22);
             this.LoadDataClients.Text = "Clients";
             this.LoadDataClients.Click += new System.EventHandler(this.LoadDataClients_Click);
             // 
             // LoadDataRepairs
             // 
             this.LoadDataRepairs.Name = "LoadDataRepairs";
-            this.LoadDataRepairs.Size = new System.Drawing.Size(180, 22);
+            this.LoadDataRepairs.Size = new System.Drawing.Size(112, 22);
             this.LoadDataRepairs.Text = "Repairs";
             this.LoadDataRepairs.Click += new System.EventHandler(this.LoadDataRepairs_Click);
             // 
@@ -212,9 +213,9 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

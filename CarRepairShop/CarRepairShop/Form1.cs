@@ -1,6 +1,7 @@
 using CarRepairShop.DomainObjects;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace CarRepairShop
@@ -85,6 +86,26 @@ namespace CarRepairShop
             return true;
         }
 
+        private bool updateRepairRecord(Repairs repairRecord)
+        {
+            string query = "UPDATE REPAIRS";
+            query += " SET CLIENT_ID = @CLIENT_ID, CAR_ID = @CAR_ID, BEGIN_DATE = @BEGIN_DATE,  END_DATE = @END_DATE," +
+                " IS_PAYED = @IS_PAYED,  IS_RETURNED = @IS_RETURNED " + 
+                " WHERE ID =  " + repairRecord.ID.ToString();
+
+            SqlCommand myCommand = new SqlCommand(query, databaseConnection.Connection);
+
+            myCommand.Parameters.AddWithValue("@CLIENT_ID", repairRecord.ClientID);
+            myCommand.Parameters.AddWithValue("@CAR_ID", repairRecord.CarID);
+            myCommand.Parameters.AddWithValue("@BEGIN_DATE", repairRecord.BeginDate);
+            myCommand.Parameters.AddWithValue("@END_DATE", repairRecord.EndDate);
+            myCommand.Parameters.AddWithValue("@IS_PAYED", repairRecord.IsPayed);
+            myCommand.Parameters.AddWithValue("@IS_RETURNED", repairRecord.IsReturned);
+            myCommand.ExecuteNonQuery();
+
+            return true;
+        }
+
         private bool insertCarRecord(Cars record)
         {
             string query = "INSERT INTO CARS";
@@ -115,6 +136,23 @@ namespace CarRepairShop
             myCommand.Parameters.AddWithValue("@CITY_ID", clientRecord.CityID);
             myCommand.Parameters.AddWithValue("@ADDRESS", clientRecord.Address);
             myCommand.Parameters.AddWithValue("@TELEPHONE", clientRecord.Telephone);
+
+            myCommand.ExecuteNonQuery();
+
+            return true;
+        }
+
+        private bool insertRepair(Repairs repairs)
+        {
+            string query = "INSERT INTO REPAIRS ";
+            query += "VALUES(@CLIENT_ID, @CAR_ID, @BEGIN_DATE, @END_DATE, @IS_PAYED, @IS_RETURNED)";
+            SqlCommand myCommand = new SqlCommand(query, databaseConnection.Connection);
+            myCommand.Parameters.AddWithValue("@CLIENT_ID", repairs.ClientID);
+            myCommand.Parameters.AddWithValue("@CAR_ID", repairs.CarID);
+            myCommand.Parameters.AddWithValue("@BEGIN_DATE", repairs.BeginDate);
+            myCommand.Parameters.AddWithValue("@END_DATE", repairs.EndDate);
+            myCommand.Parameters.AddWithValue("@IS_PAYED", repairs.IsPayed);
+            myCommand.Parameters.AddWithValue("@IS_RETURNED", repairs.IsReturned);
 
             myCommand.ExecuteNonQuery();
 
@@ -166,7 +204,7 @@ namespace CarRepairShop
             record.RegistrationNumber = sqlReder["REGISTRATION_NUMBER"].ToString();
             record.NumberOfSeats = int.Parse(sqlReder["NUMBER_OF_SEATS"].ToString());
             record.ColordID = int.Parse(sqlReder["COLOR_ID"].ToString());
-            //record.YearOfProduction. = sqlReder["YEAR_OF_PRODUCTION"].ToString();
+            record.YearOfProduction = new DateTime(long.Parse(sqlReder["YEAR_OF_PRODUCTION"].ToString()));
             record.RepairPrice = double.Parse(sqlReder["REPAIR_PRICE"].ToString());
         }
 
@@ -206,6 +244,9 @@ namespace CarRepairShop
             dt.Load(sqlReder);
             dataGridView2.DataSource = dt;
             dataGridView2.Refresh();
+            isCarsLoaded = false;
+            isClientsLoaded = false;
+            isRepairsLoaded = true;
         }
         //Krai na Load Data
 
@@ -248,7 +289,22 @@ namespace CarRepairShop
                     return;
                 }
             }
+            else if(isRepairsLoaded)
+            {
+                try
+                {
+                    Repairs repair = new Repairs();
+                    RepairsForm repairsForm = new RepairsForm(repair);
+                    repairsForm.ShowDialog();
+                    insertRepair(repair);
+                    LoadDataRepairs_Click(this, EventArgs.Empty);
+                }
+                catch
+                {
 
+                    return;
+                }
+            }
         }
 
         private void RMBUpdate_Click(object sender, EventArgs e)
@@ -283,6 +339,24 @@ namespace CarRepairShop
 
                     updateClientRecord(clientRecord);
                     LoadDataClients_Click(this, EventArgs.Empty);
+                }
+                catch
+                {
+                    return;
+                }
+            }
+            else if(isRepairsLoaded)
+            {
+                try
+                {
+                    DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                    Repairs repairsRecord = new Repairs(row);
+
+                    RepairsForm repairForm = new RepairsForm(repairsRecord);
+                    repairForm.ShowDialog();
+
+                    updateRepairRecord(repairsRecord);
+                    LoadDataRepairs_Click(this,EventArgs.Empty);
                 }
                 catch
                 {
@@ -328,6 +402,23 @@ namespace CarRepairShop
                     return;
                 }
             }
+            else if(isRepairsLoaded)
+            {
+                try
+                {
+                    DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                    Repairs repairRecord = new Repairs(row);
+
+                    SqlCommand sqlCommand = new SqlCommand("DELETE FROM REPAIRS WHERE ID = " + repairRecord.ID, databaseConnection.Connection);
+                    sqlCommand.ExecuteNonQuery();
+
+                    LoadDataRepairs_Click(this, EventArgs.Empty);
+                }
+                catch
+                {
+                    return;
+                }
+            }
         }
 
         private void RMBPreview_Click(object sender, EventArgs e)
@@ -356,6 +447,21 @@ namespace CarRepairShop
                     ClientsForm clientForm = new ClientsForm(client);
                     clientForm.ShowDialog();
 
+                }
+                catch
+                {
+                    return;
+                }
+            }
+            else if (isRepairsLoaded)
+            {
+                try
+                {
+                    DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
+                    Repairs repairRecord = new Repairs(row);
+
+                    RepairsForm repairForm  = new RepairsForm(repairRecord);
+                    repairForm.ShowDialog();
                 }
                 catch
                 {
