@@ -90,7 +90,7 @@ namespace CarRepairShop
         {
             string query = "UPDATE REPAIRS";
             query += " SET CLIENT_ID = @CLIENT_ID, CAR_ID = @CAR_ID, BEGIN_DATE = @BEGIN_DATE,  END_DATE = @END_DATE," +
-                " IS_PAYED = @IS_PAYED,  IS_RETURNED = @IS_RETURNED " + 
+                " IS_PAYED = @IS_PAYED,  IS_RETURNED = @IS_RETURNED " +
                 " WHERE ID =  " + repairRecord.ID.ToString();
 
             SqlCommand myCommand = new SqlCommand(query, databaseConnection.Connection);
@@ -254,8 +254,8 @@ namespace CarRepairShop
         //Context Menu (RMB)
         private void RMBInsert_Click(object sender, EventArgs e)
         {
-            if(isCarsLoaded)
-                {
+            if (isCarsLoaded)
+            {
 
                 try
                 {
@@ -289,7 +289,7 @@ namespace CarRepairShop
                     return;
                 }
             }
-            else if(isRepairsLoaded)
+            else if (isRepairsLoaded)
             {
                 try
                 {
@@ -345,7 +345,7 @@ namespace CarRepairShop
                     return;
                 }
             }
-            else if(isRepairsLoaded)
+            else if (isRepairsLoaded)
             {
                 try
                 {
@@ -356,7 +356,7 @@ namespace CarRepairShop
                     repairForm.ShowDialog();
 
                     updateRepairRecord(repairsRecord);
-                    LoadDataRepairs_Click(this,EventArgs.Empty);
+                    LoadDataRepairs_Click(this, EventArgs.Empty);
                 }
                 catch
                 {
@@ -402,7 +402,7 @@ namespace CarRepairShop
                     return;
                 }
             }
-            else if(isRepairsLoaded)
+            else if (isRepairsLoaded)
             {
                 try
                 {
@@ -460,7 +460,7 @@ namespace CarRepairShop
                     DataRow row = (dataGridView2.SelectedRows[0].DataBoundItem as DataRowView).Row;
                     Repairs repairRecord = new Repairs(row);
 
-                    RepairsForm repairForm  = new RepairsForm(repairRecord);
+                    RepairsForm repairForm = new RepairsForm(repairRecord);
                     repairForm.ShowDialog();
                 }
                 catch
@@ -469,11 +469,42 @@ namespace CarRepairShop
                 }
             }
         }
+        //Krai na Context Menu (RMB)
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
         }
-        //Krai na Context Menu (RMB)
+
+        private void ShowClients24h_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowMinAndMaxPrice_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowUnpaidCars_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowPaidCars_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowTop3MostRepairedBrands_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowClientWithMostPays_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

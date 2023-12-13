@@ -28,104 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
+            button3 = new Button();
+            button4 = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 23);
-            this.comboBox1.TabIndex = 2;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(66, 28);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(204, 23);
+            comboBox1.TabIndex = 2;
             // 
             // comboBox2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(16, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 23);
-            this.comboBox2.TabIndex = 3;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(70, 95);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(200, 23);
+            comboBox2.TabIndex = 3;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(16, 103);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 4;
+            dateTimePicker1.Location = new Point(70, 161);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 4;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(16, 144);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 5;
+            dateTimePicker2.Location = new Point(70, 232);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(200, 23);
+            dateTimePicker2.TabIndex = 5;
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(17, 185);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 19);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Платено";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(39, 289);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(73, 19);
+            checkBox1.TabIndex = 6;
+            checkBox1.Text = "Платено";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(19, 217);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(72, 19);
-            this.checkBox2.TabIndex = 7;
-            this.checkBox2.Text = "Върнато";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(231, 289);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(72, 19);
+            checkBox2.TabIndex = 7;
+            checkBox2.Text = "Върнато";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(113, 289);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Apply";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Apply_Click);
+            button3.Location = new Point(196, 351);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 0;
+            button3.Text = "Apply";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += Apply_Click;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(194, 289);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Close";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button2_Click);
+            button4.Location = new Point(277, 351);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 1;
+            button4.Text = "Close";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button2_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(130, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(73, 15);
+            label1.TabIndex = 8;
+            label1.Text = "Client Name";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(130, 77);
+            label2.Name = "label2";
+            label2.Size = new Size(80, 15);
+            label2.TabIndex = 9;
+            label2.Text = "Plate Number";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(141, 143);
+            label3.Name = "label3";
+            label3.Size = new Size(62, 15);
+            label3.TabIndex = 10;
+            label3.Text = "Date From";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(141, 214);
+            label4.Name = "label4";
+            label4.Size = new Size(46, 15);
+            label4.TabIndex = 11;
+            label4.Text = "Date To";
             // 
             // RepairsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(277, 335);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Name = "RepairsForm";
-            this.Text = "RepairsForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(364, 385);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(checkBox2);
+            Controls.Add(checkBox1);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Name = "RepairsForm";
+            Text = "RepairsForm";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -138,5 +181,9 @@
         private CheckBox checkBox2;
         private Button button3;
         private Button button4;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }

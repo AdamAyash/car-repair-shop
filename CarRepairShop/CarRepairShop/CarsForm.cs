@@ -123,7 +123,7 @@ namespace CarRepairShop
             textBox1.Text = _carRecord.RegistrationNumber;
         }
 
-       
+
 
         private void Apply_Click(object sender, EventArgs e)
         {

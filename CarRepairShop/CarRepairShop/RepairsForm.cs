@@ -103,7 +103,7 @@ namespace CarRepairShop
 
         private void LoadControlsToData()
         {
-            var result1 =_clientsList.Where(b => b.Name.Equals(comboBox1.SelectedItem)).ToList();
+            var result1 = _clientsList.Where(b => b.Name.Equals(comboBox1.SelectedItem)).ToList();
             _repairRecord.ClientID = result1[0].ID;
 
             var result2 = _carsList.Where(m => m.RegistrationNumber.Equals(comboBox2.SelectedItem)).ToList();
