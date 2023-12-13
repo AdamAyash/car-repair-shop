@@ -176,29 +176,41 @@ namespace CarRepairShop
 
         private void ShowUnpaidCars_Click(object sender, EventArgs e)
         {
-            //Izvejdane na vs neplateni koli
+            SqlCommand command = new SqlCommand(
+                 "SELECT\r\n\t*\r\nFROM CARS WITH(NOLOCK)\r\nINNER JOIN REPAIRS WITH (NOLOCK)\r\n\tON CARS.ID = REPAIRS.CAR_ID\r\nWHERE REPAIRS.IS_PAYED = 1", databaseConnection.Connection);
+            SqlDataReader sqlReder = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(sqlReder);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Refresh();
         }
 
         private void ShowPaidCars_Click(object sender, EventArgs e)
         {
-            //Izvejdane na vs plateni koli
+            SqlCommand command = new SqlCommand(
+                "SELECT\r\n\t*\r\nFROM CARS WITH(NOLOCK)\r\nINNER JOIN REPAIRS WITH (NOLOCK)\r\n\tON CARS.ID = REPAIRS.CAR_ID\r\nWHERE REPAIRS.IS_PAYED = 0", databaseConnection.Connection);
+            SqlDataReader sqlReder = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(sqlReder);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Refresh();
         }
 
         private void ShowTop3MostRepairedBrands_Click(object sender, EventArgs e)
         {
-            //Top 3 nai-remontirani koli podredeni po marka
+            SqlCommand command = new SqlCommand(
+                 "SELECT TOP 3\r\n\tBRANDS.NAME,\r\n\tCLIENTS.NAME,\r\n\tCLIENTS.IDENTITY_NUMBER,\r\n\tCARS.REGISTRATION_NUMBER,\r\n\tCOUNT(CARS.REGISTRATION_NUMBER) AS NUMBER_OF_REPAIRS,\r\n\tBRANDS.NAME\r\nFROM REPAIRS WITH(NOLOCK)\r\nINNER JOIN CLIENTS WITH (NOLOCK)\r\n\tON REPAIRS.CLIENT_ID = CLIENTS.ID\r\nINNER JOIN CARS WITH (NOLOCK)\r\n\tON CARS.ID = REPAIRS.CAR_ID\r\nINNER JOIN BRANDS WITH (NOLOCK)\r\n\tON BRANDS.ID = CARS.BRAND_ID\r\nGROUP BY CLIENTS.NAME, CLIENTS.IDENTITY_NUMBER, CARS.REGISTRATION_NUMBER, BRANDS.NAME\r\nORDER BY NUMBER_OF_REPAIRS DESC ", databaseConnection.Connection);
+            SqlDataReader sqlReder = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(sqlReder);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Refresh();
         }
 
         private void ShowClientWithMostPays_Click(object sender, EventArgs e)
         {
             SqlCommand command = new SqlCommand(
-                "SELECT\r\n\tCLIENTS.NAME,\r\n\tCLIENTS.IDENTITY_NUMBER," +
-                "\r\n\tCARS.REGISTRATION_NUMBER,\r\n\tMAX(CARS.REPAIR_PRICE)  AS MAX_PRICE\r\nFROM REPAIRS WITH(NOLOCK)\r\n" +
-                "INNER JOIN CLIENTS WITH (NOLOCK)\r\n\tON REPAIRS.CLIENT_ID = CLIENTS.ID\r\nINNER JOIN CARS WITH (NOLOCK)\r\n\t" +
-                "ON CARS.ID = REPAIRS.CAR_ID" +
-                "\r\nGROUP BY CLIENTS.NAME, " +
-                "CLIENTS.IDENTITY_NUMBER, " +
-                "CARS.REGISTRATION_NUMBER", databaseConnection.Connection);
+                "SELECT TOP 1\r\n\tCLIENTS.NAME,\r\n\tCLIENTS.IDENTITY_NUMBER,\r\n\tCARS.REGISTRATION_NUMBER,\r\n\tMAX(CARS.REPAIR_PRICE)  AS MAX_PRICE\r\nFROM REPAIRS WITH(NOLOCK)\r\nINNER JOIN CLIENTS WITH (NOLOCK)\r\n\tON REPAIRS.CLIENT_ID = CLIENTS.ID\r\nINNER JOIN CARS WITH (NOLOCK)\r\n\tON CARS.ID = REPAIRS.CAR_ID\r\nGROUP BY CLIENTS.NAME, CLIENTS.IDENTITY_NUMBER, CARS.REGISTRATION_NUMBER\r\nORDER BY MAX_PRICE DESC", databaseConnection.Connection);
             SqlDataReader sqlReder = command.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(sqlReder);

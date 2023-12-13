@@ -84,24 +84,28 @@
             this.RMBInsert.Name = "RMBInsert";
             this.RMBInsert.Size = new System.Drawing.Size(115, 22);
             this.RMBInsert.Text = "Insert";
+            this.RMBInsert.Click += new System.EventHandler(this.RMBInsert_Click);
             // 
             // RMBUpdate
             // 
             this.RMBUpdate.Name = "RMBUpdate";
             this.RMBUpdate.Size = new System.Drawing.Size(115, 22);
             this.RMBUpdate.Text = "Update";
+            this.RMBUpdate.Click += new System.EventHandler(this.RMBUpdate_Click);
             // 
             // RMBDelete
             // 
             this.RMBDelete.Name = "RMBDelete";
             this.RMBDelete.Size = new System.Drawing.Size(115, 22);
             this.RMBDelete.Text = "Delete";
+            this.RMBDelete.Click += new System.EventHandler(this.RMBDelete_Click);
             // 
             // RMBPreview
             // 
             this.RMBPreview.Name = "RMBPreview";
             this.RMBPreview.Size = new System.Drawing.Size(115, 22);
             this.RMBPreview.Text = "Preview";
+            this.RMBPreview.Click += new System.EventHandler(this.RMBPreview_Click);
             // 
             // databaseConnectionBindingSource
             // 
@@ -149,18 +153,21 @@
             this.ShowUnpaidCars.Name = "ShowUnpaidCars";
             this.ShowUnpaidCars.Size = new System.Drawing.Size(252, 22);
             this.ShowUnpaidCars.Text = "Show Unpaid Cars";
+            this.ShowUnpaidCars.Click += new System.EventHandler(this.ShowUnpaidCars_Click);
             // 
             // ShowPaidCars
             // 
             this.ShowPaidCars.Name = "ShowPaidCars";
             this.ShowPaidCars.Size = new System.Drawing.Size(252, 22);
             this.ShowPaidCars.Text = "Show Paid Cars";
+            this.ShowPaidCars.Click += new System.EventHandler(this.ShowPaidCars_Click);
             // 
             // ShowTop3MostRepairedBrands
             // 
             this.ShowTop3MostRepairedBrands.Name = "ShowTop3MostRepairedBrands";
             this.ShowTop3MostRepairedBrands.Size = new System.Drawing.Size(252, 22);
             this.ShowTop3MostRepairedBrands.Text = "Show Top 3 Most Repaired Brands";
+            this.ShowTop3MostRepairedBrands.Click += new System.EventHandler(this.ShowTop3MostRepairedBrands_Click);
             // 
             // ShowClientWithMostPays
             // 
@@ -184,18 +191,21 @@
             this.LoadDataCars.Name = "LoadDataCars";
             this.LoadDataCars.Size = new System.Drawing.Size(112, 22);
             this.LoadDataCars.Text = "Cars";
+            this.LoadDataCars.Click += new System.EventHandler(this.LoadDataCars_Click);
             // 
             // LoadDataClients
             // 
             this.LoadDataClients.Name = "LoadDataClients";
             this.LoadDataClients.Size = new System.Drawing.Size(112, 22);
             this.LoadDataClients.Text = "Clients";
+            this.LoadDataClients.Click += new System.EventHandler(this.LoadDataClients_Click);
             // 
             // LoadDataRepairs
             // 
             this.LoadDataRepairs.Name = "LoadDataRepairs";
             this.LoadDataRepairs.Size = new System.Drawing.Size(112, 22);
             this.LoadDataRepairs.Text = "Repairs";
+            this.LoadDataRepairs.Click += new System.EventHandler(this.LoadDataRepairs_Click);
             // 
             // Form1
             // 
