@@ -202,7 +202,7 @@ namespace CarRepairShop
         private void ShowUnpaidCars_Click(object sender, EventArgs e)
         {
             SqlCommand command = new SqlCommand(
-                 "SELECT\r\n\t*\r\nFROM CARS WITH(NOLOCK)\r\nINNER JOIN REPAIRS WITH (NOLOCK)\r\n\tON CARS.ID = REPAIRS.CAR_ID\r\nWHERE REPAIRS.IS_PAYED = 1", databaseConnection.Connection);
+                 "SELECT\r\n\t*\r\nFROM CARS WITH(NOLOCK)\r\nINNER JOIN REPAIRS WITH (NOLOCK)\r\n\tON CARS.ID = REPAIRS.CAR_ID\r\nWHERE REPAIRS.IS_PAYED = 0", databaseConnection.Connection);
             SqlDataReader sqlReder = command.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(sqlReder);
@@ -213,7 +213,7 @@ namespace CarRepairShop
         private void ShowPaidCars_Click(object sender, EventArgs e)
         {
             SqlCommand command = new SqlCommand(
-                "SELECT\r\n\t*\r\nFROM CARS WITH(NOLOCK)\r\nINNER JOIN REPAIRS WITH (NOLOCK)\r\n\tON CARS.ID = REPAIRS.CAR_ID\r\nWHERE REPAIRS.IS_PAYED = 0", databaseConnection.Connection);
+                "SELECT\r\n\t*\r\nFROM CARS WITH(NOLOCK)\r\nINNER JOIN REPAIRS WITH (NOLOCK)\r\n\tON CARS.ID = REPAIRS.CAR_ID\r\nWHERE REPAIRS.IS_PAYED = 1", databaseConnection.Connection);
             SqlDataReader sqlReder = command.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(sqlReder);
