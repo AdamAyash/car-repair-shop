@@ -191,7 +191,20 @@ namespace CarRepairShop
 
         private void ShowClientWithMostPays_Click(object sender, EventArgs e)
         {
-            //Klienta , koito e napravil nai-golqm oborot ot remont na kola/koli
+            SqlCommand command = new SqlCommand(
+                "SELECT\r\n\tCLIENTS.NAME,\r\n\tCLIENTS.IDENTITY_NUMBER," +
+                "\r\n\tCARS.REGISTRATION_NUMBER,\r\n\tMAX(CARS.REPAIR_PRICE)  AS MAX_PRICE\r\nFROM REPAIRS WITH(NOLOCK)\r\n" +
+                "INNER JOIN CLIENTS WITH (NOLOCK)\r\n\tON REPAIRS.CLIENT_ID = CLIENTS.ID\r\nINNER JOIN CARS WITH (NOLOCK)\r\n\t" +
+                "ON CARS.ID = REPAIRS.CAR_ID" +
+                "\r\nGROUP BY CLIENTS.NAME, " +
+                "CLIENTS.IDENTITY_NUMBER, " +
+                "CARS.REGISTRATION_NUMBER", databaseConnection.Connection);
+            SqlDataReader sqlReder = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(sqlReder);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Refresh();
+           
         }
         //Krai na spravkite
 

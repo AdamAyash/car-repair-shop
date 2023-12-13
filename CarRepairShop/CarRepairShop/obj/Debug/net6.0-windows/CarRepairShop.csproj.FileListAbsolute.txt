@@ -130,12 +130,6 @@ C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\ob
 C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\obj\Debug\net6.0-windows\CarRepairShop.CarsForm.resources
 C:\Users\Adam Ayash\Documents\GitHub\car-repair-shop\CarRepairShop\CarRepairShop\obj\Debug\net6.0-windows\CarRepairShop.CarsForm.resources
 C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\obj\Debug\net6.0-windows\CarRepairShop.ClientsForm.resources
-C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
-C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
-C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
-C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
-C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\mobir\Documents\Projects\car-repair-shop\CarRepairShop\CarRepairShop\obj\Debug\net6.0-windows\CarRepairShop.RepairsForm.resources
 C:\Users\vaset\Desktop\car-repair-shop\CarRepairShop\CarRepairShop\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
 C:\Users\vaset\Desktop\car-repair-shop\CarRepairShop\CarRepairShop\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
