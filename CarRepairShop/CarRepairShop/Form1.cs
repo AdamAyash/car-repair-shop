@@ -164,14 +164,39 @@ namespace CarRepairShop
 
         private void ShowClients24h_Click(object sender, EventArgs e)
         {
-            //Vsichki klienti , koito sa ostavili prez poslednite 24h
-            //svoite koli za remont , spisukut da e podreden
-            //po marka i narastvasht reg.nomer na kolite
+            SqlCommand command = new SqlCommand(
+                "SELECT \r\n    " +
+                "CLIENTS.NAME,\r\n    " +
+                "CLIENTS.IDENTITY_NUMBER,\r\n    " +
+                "CARS.REGISTRATION_NUMBER,\r\n    " +
+                "BRANDS.NAME,\r\n    " +
+                "BEGIN_DATE,\r\n    " +
+                "END_DATE\r\nFROM REPAIRS WITH(NOLOCK)\r\nINNER JOIN CLIENTS WITH(NOLOCK)\r\n    " +
+                "ON REPAIRS.CLIENT_ID = CLIENTS.ID\r\nINNER JOIN CARS WITH(NOLOCK)\r\n    " +
+                "ON REPAIRS.CAR_ID = CARS.ID\r\nINNER JOIN BRANDS WITH(NOLOCK)\r\n    " +
+                "ON CARS.BRAND_ID = BRANDS.ID\r\nWHERE DATEDIFF(DAY, GETDATE(), BEGIN_DATE) = 0\r\nGROUP BY CLIENTS.NAME, " +
+                "CLIENTS.IDENTITY_NUMBER, CARS.REGISTRATION_NUMBER,BRANDS.NAME,BEGIN_DATE,END_DATE\r\nORDER BY BRANDS.NAME, " +
+                "CARS.REGISTRATION_NUMBER ASC", databaseConnection.Connection);
+            SqlDataReader sqlReder = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(sqlReder);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Refresh();
         }
 
         private void ShowMinAndMaxPrice_Click(object sender, EventArgs e)
         {
-            //Izvejdane na min i max cena za naem , podredeno po marka na kolata
+            SqlCommand command = new SqlCommand(
+                 "SELECT\r\n    REGISTRATION_NUMBER,\r\n    BRANDS.NAME          " +
+                 "      AS BRAND_NAME,\r\n    MIN(REPAIR_PRICE)     " +
+                 "   AS MINREPAIRPRICE,\r\n    MAX(REPAIR_PRICE)      " +
+                 "  AS MAXREPAIRPRICE\r\nFROM CARS WITH(NOLOCK)\r\nINNER JOIN BRANDS WITH(NOLOCK)\r\n    " +
+                 "ON BRANDS.ID = CARS.ID\r\nGROUP BY REGISTRATION_NUMBER,  BRANDS.NAME", databaseConnection.Connection);
+            SqlDataReader sqlReder = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(sqlReder);
+            dataGridView2.DataSource = dt;
+            dataGridView2.Refresh();
         }
 
         private void ShowUnpaidCars_Click(object sender, EventArgs e)
@@ -216,7 +241,7 @@ namespace CarRepairShop
             dt.Load(sqlReder);
             dataGridView2.DataSource = dt;
             dataGridView2.Refresh();
-           
+
         }
         //Krai na spravkite
 
@@ -530,6 +555,6 @@ namespace CarRepairShop
         {
 
         }
-        
+
     }
 }
